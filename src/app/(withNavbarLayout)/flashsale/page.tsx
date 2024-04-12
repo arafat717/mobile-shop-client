@@ -4,11 +4,14 @@ import FlashSaleCard from "@/components/UI/FlashSaleCard";
 import React from "react";
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/flashsale", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const res = await fetch(
+    "https://assignment-eight-server.vercel.app/api/v1/flashsale",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
   const flashSales = await res.json();
   return (
     <div>

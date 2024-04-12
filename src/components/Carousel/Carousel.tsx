@@ -1,4 +1,5 @@
 "use client";
+
 // components/Carousel.js
 
 import { useEffect, useState } from "react";

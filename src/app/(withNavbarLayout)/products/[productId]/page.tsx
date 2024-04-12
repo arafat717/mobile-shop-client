@@ -8,7 +8,7 @@ interface ProductId {
 
 const ProductDetailsPage = async ({ params }: ProductId) => {
   const res = await fetch(
-    `http://localhost:5000/api/v1/products/${params.productId}`
+    `https://assignment-eight-server.vercel.app/api/v1/products/${params.productId}`
   );
   const product = await res.json();
   return (

@@ -15,18 +15,18 @@ interface Product {
   brandImage?: string;
 }
 
-interface Product {
-  _id: string;
-  name: string;
-  brand: string;
-  category: string;
-  price: number;
-  ratings: number;
-  description: string;
-  images: string[];
-  flashSale: boolean;
-  createdAt: string;
-}
+// interface Product {
+//   _id: string;
+//   name: string;
+//   brand: string;
+//   category: string;
+//   price: number;
+//   ratings: number;
+//   description: string;
+//   images: string[];
+//   flashSale: boolean;
+//   createdAt: string;
+// }
 
 export interface TopBrandData {
   brand: string;

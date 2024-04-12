@@ -2,31 +2,30 @@
 import Carousel from "@/components/Carousel/Carousel";
 import React from "react";
 import Link from "next/link";
-import { Product, TopBrandData } from "@/Utils/types";
-import TopBrands from "@/components/TopBrands/TopBrands";
+import { Product } from "@/Utils/types";
 import FlashSaleCard from "@/components/UI/FlashSaleCard";
-import ProductCard from "@/components/UI/ProductCard";
 import TopBrandCard from "@/components/UI/TopBrandCard";
 import BrandCard from "@/components/UI/BrandCard";
 
 const HomePage = async () => {
-  const newBrand = await fetch(
-    "http://localhost:5000/api/v1/allBrandsWithImagesAndProducts"
+  const data = await fetch(
+    "https://assignment-eight-server.vercel.app/api/v1/flashsale",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
   );
-  const NewBrands = await newBrand.json();
-
-  const data = await fetch("http://localhost:5000/api/v1/flashsale", {
-    next: {
-      revalidate: 30,
-    },
-  });
   const flashSales = await data.json();
 
-  const top = await fetch("http://localhost:5000/api/v1/topRatedProducts", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const top = await fetch(
+    "https://assignment-eight-server.vercel.app/api/v1/topRatedProducts",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
   const topproduct = await top.json();
   return (
     <div>
@@ -61,13 +60,8 @@ const HomePage = async () => {
           sophistication.
         </p>
       </div>
-      <div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 py-8 px-10 lg:px-24 mx-auto">
-          {NewBrands?.slice(0, 6).map((product: Product) => (
-            <BrandCard key={product._id} product={product}></BrandCard>
-          ))}
-        </div>
-      </div>
+
+      <BrandCard></BrandCard>
       <div className="text-center my-10">
         <Link href="/catagory">
           <button className="bg-gray-900 text-white px-3 py-2 rounded-md hover:bg-gray-700 transition-colors duration-300 w-1/6">

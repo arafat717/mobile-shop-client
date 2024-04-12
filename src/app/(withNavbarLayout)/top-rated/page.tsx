@@ -3,11 +3,14 @@ import TopBrandCard from "@/components/UI/TopBrandCard";
 import React from "react";
 
 const topRatedProducts = async () => {
-  const top = await fetch("http://localhost:5000/api/v1/topRatedProducts", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const top = await fetch(
+    "https://assignment-eight-server.vercel.app/api/v1/topRatedProducts",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
   const topproduct = await top.json();
   return (
     <div>

@@ -2,7 +2,9 @@ import { Product } from "@/Utils/types";
 import ProductCard from "@/components/UI/ProductCard";
 
 const ProductPage: React.FC = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/products");
+  const res = await fetch(
+    "https://assignment-eight-server.vercel.app/api/v1/products"
+  );
   const products = await res.json();
 
   return (
