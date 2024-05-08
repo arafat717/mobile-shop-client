@@ -2,6 +2,10 @@
 
 Pocket Tech Hub is a web application designed for mobile device enthusiasts who are looking for a convenient platform to explore and purchase various brands of mobile devices. Whether you're in search of the latest flagship model or seeking budget-friendly options, Pocket Tech Hub offers a seamless shopping experience.
 
+## Live Link
+
+[Live Demo](https://mobile-shope-deploy.vercel.app/)
+
 ## Features
 
 - **Extensive Product Catalog**: Browse through a diverse range of mobile devices from leading brands.
